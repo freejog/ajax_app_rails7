@@ -3,14 +3,14 @@ const buildHTML = (XHR) => {
   const html = `
     <div class="post">
       <div class="post-date">
-        投稿日時:${item.created_at}
+        投稿日時：${item.created_at}
       </div>
       <div class="post-content">
         ${item.content}
       </div>
     </div>`;
   return html;
-}
+};
 
 function post (){
   const form = document.getElementById("form");
@@ -28,7 +28,7 @@ function post (){
       };
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
-      list.insertAdjacentHTML("afterend", buildHTML);
+      list.insertAdjacentHTML("afterend", buildHTML(XHR));
       formText.value = "";
     };
   });
